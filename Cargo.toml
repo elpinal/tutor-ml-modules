@@ -1,0 +1,13 @@
+[package]
+name = "tutor-ml-modules"
+version = "0.1.0"
+authors = ["elpinal"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0"
+logos = "0.12.0"
+peg = {git = "https://github.com/kevinmehall/rust-peg", rev = "7d03e42621b3be40e79306fa34ae9d406aa85965"}
+thiserror = "1.0"
