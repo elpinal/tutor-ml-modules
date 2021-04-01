@@ -584,7 +584,7 @@ impl Scheme {
         a1.unify(table, &a2)
     }
 
-    pub fn gen(table: &mut UnifTable, rank: Rank, mut a: Atom) -> Self {
+    pub fn generalize(table: &mut UnifTable, rank: Rank, mut a: Atom) -> Self {
         let mut fvs = Vec::new();
         a.replace_uvars(table, rank, &mut fvs);
         a.close(table, 0, &fvs);

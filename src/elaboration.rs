@@ -110,7 +110,7 @@ impl Elaborate for el::Binding {
             }
             el::Binding::Value(id, e) => {
                 let (a, e) = e.elaborate(env, table)?;
-                let scheme = Scheme::gen(table, env.get_rank(), a);
+                let scheme = Scheme::generalize(table, env.get_rank(), a);
                 Ok((
                     ExSig::from(Sig::singleton_value(id.clone(), scheme)),
                     Some(expr::Binding::Var(expr::Var::Value(id), e)),
