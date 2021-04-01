@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 use crate::ident::*;
 use crate::paren::Paren;
 

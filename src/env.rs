@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 use crate::ident::*;
 use crate::il::sig::*;
 use crate::il::tycon::*;

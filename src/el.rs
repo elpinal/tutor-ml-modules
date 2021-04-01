@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 pub use crate::ident::*;
 pub use crate::kind::Kind;
 

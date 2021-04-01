@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 pub use crate::kind::Kind;
 use crate::paren::Paren;
 
