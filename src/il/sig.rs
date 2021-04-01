@@ -281,7 +281,7 @@ impl Sig {
         against
             .v
             .iter()
-            .try_for_each(|(id, scheme)| self.proj_value(id)?.generalize(table, scheme))?;
+            .try_for_each(|(id, scheme)| self.proj_value(id)?.is_general_than(table, scheme))?;
         against.t.iter().try_for_each(|(id, (ty2, k2))| {
             let (ty1, k1) = self.proj_type(id)?;
             k1.unify(k2)?;
@@ -568,8 +568,7 @@ impl Scheme {
         a
     }
 
-    // TODO: rename to `is_general_than`.
-    pub fn generalize(&self, table: &mut UnifTable, scheme: &Scheme) -> anyhow::Result<()> {
+    pub fn is_general_than(&self, table: &mut UnifTable, scheme: &Scheme) -> anyhow::Result<()> {
         let a1 = self.clone().instantiate(table);
 
         let n = scheme.vars;
